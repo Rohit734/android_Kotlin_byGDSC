@@ -80,7 +80,7 @@ class NavigationTests : BaseTest() {
         // Click the cancel button
         onView(withId(R.id.cancel_button)).perform(click())
         // Check that the destination is correct
-        assertEquals(navController.currentDestination?.id, R.id.startOrder)
+        assertEquals(navController.currentDestination?.id,R.id.startOrder)
     }
 
     /**
