@@ -44,4 +44,5 @@ class OverviewViewModel : ViewModel() {
     private fun getMarsPhotos() {
         _status.value = "Set the Mars API status response here!"
     }
+    
 }
