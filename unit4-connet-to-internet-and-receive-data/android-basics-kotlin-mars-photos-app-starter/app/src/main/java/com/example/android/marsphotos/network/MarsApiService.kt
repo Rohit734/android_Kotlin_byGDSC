@@ -1,7 +1,6 @@
 package com.example.android.marsphotos.network
 
 import retrofit2.Retrofit
-import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
 
 private const val BASE_URL =
@@ -11,7 +10,14 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 // creating interface
+
+
+object MarsApi{
+    val retrofitServices : MarsApiService by lazy {
+    retrofit.create(MarsApiService::class.java)
+    }
+}
 interface MarsApiService{
     @GET("photos")
-    fun getPhotos() : String
+    suspend fun getPhotos() : String
 }
