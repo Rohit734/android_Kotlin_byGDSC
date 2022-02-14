@@ -3,7 +3,10 @@ package com.example.android.marsphotos
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.android.marsphotos.network.MarsPhoto
+import com.example.android.marsphotos.overview.PhotoGridAdapter
 
 /*The @BindingAdapter annotation tells data
 binding to execute this binding adapter when a
@@ -23,7 +26,9 @@ imageUrl?.let {
 }
 
 }
-
-
-class BindingAdapters {
+@BindingAdapter("listData")
+fun bindRecyclerView(recyclerView: RecyclerView,
+                     data: List<MarsPhoto>?) {
+    val adapter = recyclerView.adapter as PhotoGridAdapter
+    adapter.submitList(data)
 }

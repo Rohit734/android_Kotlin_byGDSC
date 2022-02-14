@@ -40,6 +40,7 @@ class OverviewFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val binding = FragmentOverviewBinding.inflate(inflater)
 
         //val binding = GridViewItemBinding.inflate(inflater)
@@ -48,7 +49,7 @@ class OverviewFragment : Fragment() {
 
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
-
+        binding.photosGrid.adapter = PhotoGridAdapter()
         return binding.root
     }
 }
